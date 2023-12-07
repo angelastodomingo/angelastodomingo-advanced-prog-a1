@@ -13,3 +13,53 @@
 #Frank	Salesman	2500.0	4
 #Marker	Clerk		1500.0	5
 #```
+
+import tkinter as tk
+
+class Employee:
+    def __int__(self):
+        self.name = ""
+        self.position = ""
+        self.salary = 0.0
+        self.age = ""
+
+    def setData(self, name, position, salary, id):
+        self.name = name
+        self.position = position
+        self.salary = salary 
+        self.id = id
+
+    def getData(self):
+        return f"Name: {self.name}, Position: {self.position}, Salary: {self.salary}, ID: {self.id}"
+
+class Employee_GUI(tk, Tk):
+    def __int__(self):
+        super().__int__()
+        self.title("Employees details")
+        self.geometry("400*400")
+        self.employees = []
+        self.add_employee()
+
+    def add_employee(self):
+        for _ in range(5):
+            name = input("Enter name: ")
+            position = input("Enter the position: ")
+            salary = float(input("Emter the salary: "))
+            id = input("Enter ID: ")
+        employee = Employee()
+        employee.setData(name, position, salary, id)
+        self.employee.append(employee)
+    self.display.employees()
+
+    def display_employees(self):
+        for employee in self.employees:
+            print(employee.getData())
+app = Employee_GUI()
+app.mainloop()
+
+
+
+
+
+
+
