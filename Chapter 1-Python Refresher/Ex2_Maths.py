@@ -1,3 +1,4 @@
+### Exercise 2: Maths ☑️
 #Write a program that evaluates the following calculations for two int numbers obtained from the user and outputs the results to the console:
 
 #```Sum (+) | Diff (-) | Product (x) | Quotient (/) | Remainder (%)```
