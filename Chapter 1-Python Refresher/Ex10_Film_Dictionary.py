@@ -3,10 +3,12 @@
 
 
 film = {
-    'Title:': "Your Name",
-    'Director:': 'Makoto Shinkai',
-    'Release Date:': '2016',
+    'Title:': "Gone Girl",
+    'Director:': 'David Fincher',
+    'Release Date:': 'October 2, 2014',
+    'Box Office:': '369.3 million USD',
+    'Budget:': '61 million USD',
 }
 
 for key, value in film.items():
-    print (key,value)
+    print(key, value)

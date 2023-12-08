@@ -7,35 +7,54 @@
 #```
 #Each of the 3 functions should ask for the necessary information (e.g. lengths and/or angles and output the answer.
 
+print("This program will calculate the area of a square, circle or triangle.")
+
 def square():
-    num1 = int(input("Enter number to calculate the area of square: "))
-    area = num1**2
-    print(f'Area of square: {area}')
+    #I put a try block to prevent the program from crashing in case the user inputs a wrong value
+    try:
+        num1 = int(input("Enter number to calculate the area of square: "))
+        area = num1**2
+        print(f'Area of square: {area}')
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+        square()
 
 def circle():
-    num1 = int(input("Enter number to calculate the area of circle: "))
-    pi = 3.14
-    r = num1
-    area = pi*(r*r)
-    print(f'Area of circle: {area}')
+    try:
+        num1 = int(input("Enter number to calculate the area of circle: "))
+        pi = 3.14
+        r = num1
+        area = pi*(r*r)
+        print(f'Area of circle: {area}')
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+        circle()
+
 
 def triangle():
-    num1 = int(input("Enter height to calculate the area of triangle: "))
-    num2 = int(input("Enter base to calculate the area of triangle: "))
-    height = num1
-    base = num2
-    area = (height + base) / 2
-    print(f'Area of triangle: {area}')
-
+    try:
+        num1 = int(input("Enter height to calculate the area of triangle: "))
+        num2 = int(input("Enter base to calculate the area of triangle: "))
+        base = num1
+        height = num2
+        area = (base * height) / 2
+        print(f'Area of triangle: {area}')
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+        triangle()
     
 
-print('Select:\n1: Calculate the area of a square.\n2: Calculate the area of a circle.\n3: Calculate the area of a triangle')
-selection = str(input("Press the number for the following to calculate: "))
-if selection == '1':
-    square()
-elif selection == '2':
-     circle()
-elif selection == '3':
-    triangle()
-else:
-    print("no. not found")
+
+    
+def menu():
+    print('Select a shape:\n1: Square\n2: Circle\n3: Triangle')
+    selection = str(input("Press the number for the following to calculate: "))
+    if selection == '1':
+        square()
+    elif selection == '2':
+        circle()
+    elif selection == '3':
+        triangle()
+    else:
+        print("Invalid input.")
+menu()

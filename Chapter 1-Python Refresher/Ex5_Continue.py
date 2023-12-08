@@ -3,9 +3,9 @@
 
 loop_count = 0
 while True:
-    ans = input('press y to keep looping: ')
-    if ans.lower() != "y" and ans.upper !="Y":
+    user_input = input('Press Y to keep looping: ')
+    if user_input.lower() != "y" and user_input.upper() != "Y":
         break
-    loop_count += 1
+    loop_count = loop_count+1
 
-print("The Y is pressed and looped ",(loop_count), "times.")
+print("The loop was executed", loop_count, "times.")

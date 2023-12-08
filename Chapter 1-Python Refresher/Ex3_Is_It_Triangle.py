@@ -7,11 +7,12 @@ side1 = int(input("Enter first side: ")) # x
 side2 = int(input("Enter second side: ")) # y
 side3 = int(input("Enter third side: ")) # z
 
-comb_side = side2 + side1
-if side3 <= comb_side:
+sides = side2 + side1
+if side3 <= sides:
     print('it is a triangle.')
 else:
     print('not a triangle')
+    
 if side1 == side2 == side3:
     print("The triangle type is: Equalateral")
 elif side1 != side2 == side3 or side2 != side1 == side3 or side3 != side1 == side2:
