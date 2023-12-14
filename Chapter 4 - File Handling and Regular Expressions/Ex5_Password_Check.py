@@ -27,13 +27,13 @@ def check_password():
     ]
 
     if all(criteria):
-        result_label.config(text="Password is valid!")
+        result_label.config(text="Password is valid!", bg='#49494a', fg='white')
     else:
-        if not attempts_remaining:
-            result_label.config(text="The authorities have been alerted!")
+        if not attempts_remaining[0]:
+            result_label.config(text="The authorities have been alerted!", bg='#49494a', fg='white')
         else:
             result_label.config(
-                text=f"Invalid password. {attempts_remaining} attempts remaining."
+                text=f"Invalid password. {attempts_remaining} attempts remaining.", bg='#49494a', fg='white'
             )
             password_entry.delete(0, "end")
             attempts_remaining[0] -= 1
@@ -41,22 +41,23 @@ def check_password():
 
 passwordwin = tk.Tk()
 passwordwin.title("Password Check")
-passwordwin.geometry('300x100')
+passwordwin.geometry('300x110')
+passwordwin.configure(bg='#49494a')
 
 attempts_remaining = [5]
 
 #label and entry boxes
-password_label = tk.Label(passwordwin, text="Enter a password:")
+password_label = tk.Label(passwordwin, text="Enter a password:",bg='#49494a', fg='white')
 password_label.pack()
 password_entry = tk.Entry(passwordwin, show="*")  # Show * for password input
 password_entry.pack()
 
 #button to validate password
-validate_button = tk.Button(passwordwin, text="Validate Password", command=check_password)
+validate_button = tk.Button(passwordwin, text="Authenticate Password", command=check_password, bg='greenyellow')
 validate_button.pack(pady=10)
 
 #displays result
-result_label = tk.Label(passwordwin, text="")
+result_label = tk.Label(passwordwin, text="",bg='#49494a', fg='white')
 result_label.pack()
 
 

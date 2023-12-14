@@ -11,7 +11,7 @@ import tkinter as tk
 class StringCounter:
     def __init__(self, master):
         self.master = master
-        self.master.title("String Occurrence Counter")
+        self.master.title("Count String")
 
         
         self.strings_to_count = [
@@ -21,10 +21,10 @@ class StringCounter:
             "Enemy"
         ]
 
-        self.result_label = tk.Label(master, text="")
+        self.result_label = tk.Label(master, text="",bg='#49494a', fg='white')
         self.result_label.pack()
 
-        self.count_button = tk.Button(master, text="Count Occurrences", command=self.count_occurrences)
+        self.count_button = tk.Button(master, text="Count Occurrences", command=self.count_occurrences, bg='dodgerblue', fg='white')
         self.count_button.pack()
 
     def count_occurrences(self):
@@ -42,5 +42,6 @@ class StringCounter:
 if __name__ == "__main__":
     countstring = tk.Tk()
     root = StringCounter(countstring)
-    countstring.geometry('400x200')
+    countstring.geometry('300x150')
+    countstring.configure(bg='#49494a')
     countstring.mainloop()

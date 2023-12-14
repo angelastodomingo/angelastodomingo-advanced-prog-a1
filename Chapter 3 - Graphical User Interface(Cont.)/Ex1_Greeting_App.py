@@ -18,6 +18,7 @@ greeting = tk.Tk()
 greeting.title("Greetings")
 greeting.geometry("400x400")
 
+
 startinglabel = tk.Label(greeting, text="Greetings! Write your name:", bg = 'blue', fg= "white", pady=5, padx=10)
 startinglabel.pack(anchor='w', pady=50, padx=40)
 
@@ -33,7 +34,7 @@ def on_click():
     result.pack()
     
 #dropdown list
-dropdown_list = ["red", "green", "blue", "magenta", "cyan", "yellow", "purple", "khaki", "firebrick", "saddlebrown", "hotpink"]
+dropdown_list = ["red", "green", "blue", "magenta", "cyan", "yellow", "purple", "firebrick", "saddlebrown", "hotpink"]
 
 colorlabel = tk.Label(greeting, text="Please select a color:")
 colorlabel.pack(anchor='w', pady=40, padx=40)

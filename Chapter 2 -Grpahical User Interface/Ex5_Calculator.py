@@ -22,7 +22,7 @@ def calculate(operator): #to get it working
         else:
             result = "Invalid operation"
 
-        result_label.config(text=f"Result: {result}")
+        result_label.config(text=f"Result: {result}",bg='#49494a', fg='white')
 
     except ValueError:
         result.config(text="Invalid input. Please enter valid numbers.")
@@ -30,14 +30,15 @@ def calculate(operator): #to get it working
 calc = tk.Tk()
 calc.title('GUI Calculator')
 calc.geometry("500x320")
+calc.configure(bg='#49494a')
 
 # create labels, text boxes, buttons
-label1 = Label(calc, text='First Number')
-label2 = Label(calc, text='Second Number')
-label3 = Label(calc, text='Result')
+label1 = Label(calc, text='First Number:', bg='#49494a', fg='white')
+label2 = Label(calc, text='Second Number:', bg='#49494a', fg='white')
+label3 = Label(calc, text='Result', bg='#49494a', fg='white')
 num1entry = Entry(calc, bd=3)  
 num2entry = Entry(calc)  
-result_label = Label(calc, text='') 
+result_label = Label(calc, text='',bg='#49494a', fg='white') 
 
 # place widgets
 label1.place(x=100, y=50)
@@ -46,11 +47,11 @@ label2.place(x=100, y=100)
 num2entry.place(x=200, y=100)
 
 #the buttons and the events 
-b1 = Button(calc, text='   Add   ', command=lambda: calculate("+")) #i call calculate so it can perform math operations
-b2 = Button(calc, text='Subtract', command=lambda: calculate("-"))  
-b3 = Button(calc, text='Multiply', command=lambda: calculate("*"))  
-b4 = Button(calc, text='Divide', command=lambda: calculate("/")) 
-b5 = Button(calc, text='Remainder', command=lambda: calculate("%"))
+b1 = Button(calc, text='   Add   ', command=lambda: calculate("+"), bg='indigo', fg='white') #i call calculate so it can perform math operations
+b2 = Button(calc, text='Subtract', command=lambda: calculate("-"), bg='darkviolet', fg='white')  
+b3 = Button(calc, text='Multiply', command=lambda: calculate("*"), bg='violet')  
+b4 = Button(calc, text='Divide', command=lambda: calculate("/"), bg='lightpink') 
+b5 = Button(calc, text='Remainder', command=lambda: calculate("%"), bg='pink')
 
 b1.place(x=100, y=150)
 b2.place(x=160, y=150)
