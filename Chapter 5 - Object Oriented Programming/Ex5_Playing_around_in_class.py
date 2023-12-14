@@ -6,3 +6,73 @@
 #- Instantiate at least two objects from your animal class (e.g. Dog, Cow)
 #- Set values for each of the variables
 #- Invoke each of the class functions
+
+import tkinter as tk
+
+class Animal:
+    def __init__(self, animal_type, name, color, age, weight, noise):
+        self.Type = animal_type
+        self.Name = name
+        self.Colour = color
+        self.Age = age
+        self.Weight = weight
+        self.Noise = noise
+
+    def sayHello(self):
+        print(f"{self.Name} says hello!")
+
+    def makeNoise(self):
+        print(f"{self.Name} makes a {self.Noise} noise!")
+
+    def animalDetails(self):
+        details = (
+            f"Type: {self.Type}\n"
+            f"Name: {self.Name}\n"
+            f"Colour: {self.Colour}\n"
+            f"Age: {self.Age}\n"
+            f"Weight: {self.Weight}\n"
+            f"Noise: {self.Noise}"
+        )
+        print(details)
+
+#dog n cow
+dog = Animal("Dog", "Buddy", "Brown", 4, 20, "Bark")
+cow = Animal("Cow", "Daisy", "White", 6, 600, "Moo")
+
+#class functions
+dog.sayHello()
+dog.makeNoise()
+dog.animalDetails()
+print("\n")
+cow.sayHello()
+cow.makeNoise()
+cow.animalDetails()
+
+#gui 
+playwin = tk.Tk()
+playwin.title("Playing around in class")
+playwin.geometry('300x300')
+
+result_text = tk.Text(playwin, height=30, width=40)
+result_text.pack()
+
+result_text.insert("1.0", "Animal 1 Information:\n")
+result_text.insert("end", f"Type: {dog.Type}\n")
+result_text.insert("end", f"Name: {dog.Name}\n")
+result_text.insert("end", f"Colour: {dog.Colour}\n")
+result_text.insert("end", f"Age: {dog.Age}\n")
+result_text.insert("end", f"Weight: {dog.Weight}\n")
+result_text.insert("end", f"Noise: {dog.Noise}\n\n")
+
+result_text.insert("end", "Animal 2 Information:\n")
+result_text.insert("end", f"Type: {cow.Type}\n")
+result_text.insert("end", f"Name: {cow.Name}\n")
+result_text.insert("end", f"Colour: {cow.Colour}\n")
+result_text.insert("end", f"Age: {cow.Age}\n")
+result_text.insert("end", f"Weight: {cow.Weight}\n")
+result_text.insert("end", f"Noise: {cow.Noise}\n")
+
+result_text.config(state="disabled")
+
+
+playwin.mainloop()

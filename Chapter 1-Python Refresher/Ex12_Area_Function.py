@@ -43,9 +43,6 @@ def triangle():
         print("Invalid input. Please enter a valid number.")
         triangle()
     
-
-
-    
 def menu():
     print('Select a shape:\n1: Square\n2: Circle\n3: Triangle')
     selection = str(input("Press the number for the following to calculate: "))

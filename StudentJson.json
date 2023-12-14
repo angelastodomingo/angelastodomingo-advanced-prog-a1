@@ -1,0 +1,9 @@
+{
+    "Name": "Alpha",
+    "ID": "1",
+    "course": "BSc CC",
+    "CourseDetails": {
+        "Group": "A",
+        "Year": 2
+    }
+}

@@ -11,3 +11,23 @@
 #Pack arguments
 #- Fill: Fill the space with the widget, Values are  Y, X, BOTH. For example fill=Y
 #- Expand: The size of the button is expanded if the window is maximized. Values are 0,1, any number, YES, NO. For example  expand=0 (default) no expansion
+
+from tkinter import * 
+import random
+
+app = Tk() 
+app.title("Using pack")
+
+bA = Label (app, text = "A", width= 12, bg = 'red', relief = GROOVE, bd = 5)
+bB = Label (app, text = "B", width= 12, bg = 'yellow')
+bC = Label (app, text = "C", width= 12, bg = 'blue')
+bD = Label (app, text = "D", width= 12, bg = 'white')
+
+bA.pack(side = 'top', fill = X, expand = 1)
+bB.pack(side = 'bottom')
+bD.pack(side='right', fill=Y)
+bC.pack(side='top', anchor='n')
+
+
+app.mainloop()
+

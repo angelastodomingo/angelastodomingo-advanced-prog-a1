@@ -17,49 +17,81 @@
 import tkinter as tk
 
 class Employee:
-    def __int__(self):
+    def __init__(self):
         self.name = ""
         self.position = ""
         self.salary = 0.0
-        self.age = ""
+        self.id = 0
 
-    def setData(self, name, position, salary, id):
+    def setData(self, name, position, salary, emp_id):
         self.name = name
         self.position = position
-        self.salary = salary 
-        self.id = id
+        self.salary = salary
+        self.id = emp_id
 
     def getData(self):
-        return f"Name: {self.name}, Position: {self.position}, Salary: {self.salary}, ID: {self.id}"
-
-class Employee_GUI(tk, Tk):
-    def __int__(self):
-        super().__int__()
-        self.title("Employees details")
-        self.geometry("400*400")
-        self.employees = []
-        self.add_employee()
-
-    def add_employee(self):
-        for _ in range(5):
-            name = input("Enter name: ")
-            position = input("Enter the position: ")
-            salary = float(input("Emter the salary: "))
-            id = input("Enter ID: ")
-        employee = Employee()
-        employee.setData(name, position, salary, id)
-        self.employee.append(employee)
-    self.display.employees()
-
-    def display_employees(self):
-        for employee in self.employees:
-            print(employee.getData())
-app = Employee_GUI()
-app.mainloop()
+        return f"{self.name}\t{self.position}\t{self.salary}\t{self.id}"
 
 
+def add_employee(): #to create employee and add to list
+    name = name_entry.get()
+    position = position_entry.get()
+    salary = float(salary_entry.get())
+    emp_id = len(employees) + 1
+
+    employee = Employee()
+    employee.setData(name, position, salary, emp_id)
+    employees.append(employee)
+
+    name_entry.delete(0, "end")
+    position_entry.delete(0, "end")
+    salary_entry.delete(0, "end")
+
+    if len(employees) == 5:
+        add_button.config(state="disabled")
+
+def display_employees(): #displays employee data
+    result_text.config(state="normal")
+    result_text.delete(1.0, "end")
+    result_text.insert("end", "Name\tPosition\tSalary\tID\n")
+    for employee in employees:
+        result_text.insert("end", employee.getData() + "\n")
+    result_text.config(state="disabled")
 
 
+employeewin = tk.Tk()
+employeewin.title("Employee Class")
+employeewin.configure(bg='#49494a')
 
+#labels and entry boxes
+name_label = tk.Label(employeewin, text="Name:", bg='#49494a', fg='white')
+name_label.pack()
+name_entry = tk.Entry(employeewin)
+name_entry.pack()
 
+position_label = tk.Label(employeewin, text="Position:", bg='#49494a', fg='white')
+position_label.pack()
+position_entry = tk.Entry(employeewin)
+position_entry.pack()
 
+salary_label = tk.Label(employeewin, text="Salary:", bg='#49494a', fg='white')
+salary_label.pack()
+salary_entry = tk.Entry(employeewin)
+salary_entry.pack()
+
+#adds employees
+add_button = tk.Button(employeewin, text="Add Employee", command=add_employee, bg='saddlebrown', fg='white')
+add_button.pack(pady=10)
+
+#displays employees
+display_button = tk.Button(employeewin, text="Display Employees", command=display_employees, bg='chocolate', fg='white')
+display_button.pack()
+
+#employee data
+result_text = tk.Text(employeewin, state="disabled", height=10, width=40)
+result_text.pack()
+
+#stores employees
+employees = []
+
+employeewin.mainloop()
