@@ -1,3 +1,3 @@
-Name: steph
+Name: Steph
 Age: 25
-Hometown: haven springs
+Hometown: Colorado

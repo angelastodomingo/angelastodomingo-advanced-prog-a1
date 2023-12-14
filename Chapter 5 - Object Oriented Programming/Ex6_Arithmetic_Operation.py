@@ -51,12 +51,12 @@ operation_combobox.pack()
 operation_combobox.set("Addition")
 
 #entry boxes
-value1_label = tk.Label(arithcalc, text="Value 1:",bg='#49494a', fg='white')
+value1_label = tk.Label(arithcalc, text="First Number:",bg='#49494a', fg='white')
 value1_label.pack()
 value1_entry = tk.Entry(arithcalc)
 value1_entry.pack()
 
-value2_label = tk.Label(arithcalc, text="Value 2:",bg='#49494a', fg='white')
+value2_label = tk.Label(arithcalc, text="Second Number:",bg='#49494a', fg='white')
 value2_label.pack()
 value2_entry = tk.Entry(arithcalc)
 value2_entry.pack()

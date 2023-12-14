@@ -39,7 +39,6 @@ class Triangle(Shape):
     def area(self):
         return 0.5 * self.sides[0] * self.sides[1]
 
-# Function to calculate and display the area
 def calculate_area():
     shape_type = shape_choice.get()
     shape = None
@@ -70,7 +69,7 @@ shape_choice = tk.StringVar()
 shape_dropdown = tk.OptionMenu(shapeareawin, shape_choice, "Circle", "Rectangle", "Triangle")
 shape_dropdown.pack()
 
-# Create entry widgets for shape-specific sides
+
 radius_label = tk.Label(shapeareawin, text="Radius:", bg='#49494a', fg='white')
 radius_entry = tk.Entry(shapeareawin)
 

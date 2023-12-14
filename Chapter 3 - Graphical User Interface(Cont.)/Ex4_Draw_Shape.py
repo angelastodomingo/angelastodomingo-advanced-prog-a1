@@ -4,7 +4,6 @@
 import tkinter as tk
 from tkinter import ttk
 
-
 def draw_shape(): #to draw shapes on the canvas
     selected_shape = shape_var.get()
     canvas.delete("all")  # Clear the canvas
