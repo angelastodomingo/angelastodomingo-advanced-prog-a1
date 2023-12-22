@@ -11,7 +11,7 @@ from tkinter import ttk
 class ArithmeticOperations:
     def __init__(self):
         self.result = None
-
+    #if else condition to make gui calc operators work 
     def calculate(self, operation, value1, value2):
         if operation == "Addition":
             self.result = value1 + value2
@@ -23,7 +23,7 @@ class ArithmeticOperations:
             if value2 != 0:
                 self.result = value1 / value2
             else:
-                self.result = "Can't divide by zero."
+                self.result = "Can't divide by zero." #for division. will output when user tries to divide by 0
 
 
 def calculate_result(): #calculates result
@@ -36,7 +36,7 @@ def calculate_result(): #calculates result
 
     result_label.config(text=f"Result: {calculator.result}")
 
-
+#main window 
 arithcalc = tk.Tk()
 arithcalc.title("Arithmetic Operations")
 arithcalc.geometry('300x300')

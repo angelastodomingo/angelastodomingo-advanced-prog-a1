@@ -8,21 +8,23 @@
 
 import tkinter as tk
 
+#defines class name
 class Students:
-    def __init__(self, name, mark1, mark2, mark3):
+    def __init__(self, name, mark1, mark2, mark3): 
         self.name = name
         self.mark1 = mark1
         self.mark2 = mark2
         self.mark3 = mark3
 
-    def calcGrade(self):
+    def calcGrade(self): #calculates the average grade of the student 
         return (self.mark1 + self.mark2 + self.mark3) / 3
 
+    #calls calcgrade to calculate the average grade, then displays the result.
     def display(self):
         average = self.calcGrade()
         return f"Name: {self.name}\nAverage Grade: {average}"
 
-
+#retrieves data 
 def create_student():
     name = name_entry.get()
     mark1 = int(mark1_entry.get())

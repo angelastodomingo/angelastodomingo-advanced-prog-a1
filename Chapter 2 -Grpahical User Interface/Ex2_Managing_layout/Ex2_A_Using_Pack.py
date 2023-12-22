@@ -18,11 +18,13 @@ import random
 app = Tk() 
 app.title("Using pack")
 
+#the 
 bA = Label (app, text = "A", width= 12, bg = 'red', relief = GROOVE, bd = 5)
 bB = Label (app, text = "B", width= 12, bg = 'yellow')
 bC = Label (app, text = "C", width= 12, bg = 'blue')
 bD = Label (app, text = "D", width= 12, bg = 'white')
 
+#box positions
 bA.pack(side = 'top', fill = X, expand = 1)
 bB.pack(side = 'bottom')
 bD.pack(side='right', fill=Y)

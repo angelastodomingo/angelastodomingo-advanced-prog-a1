@@ -6,9 +6,11 @@ from tkinter import ttk
 
 def draw_shape(): #to draw shapes on the canvas
     selected_shape = shape_var.get()
-    canvas.delete("all")  # Clear the canvas
+    canvas.delete("all")  #Clears the canvas.
 
+#if-else condition for shape colors 
     if selected_shape == "Oval":
+        #canvas helps create shapes. 
         canvas.create_oval(50, 50, 200, 150, fill="mediumorchid")
     elif selected_shape == "Rectangle":
         canvas.create_rectangle(50, 50, 200, 150, fill="lightgreen")
@@ -33,7 +35,7 @@ shape_menu.pack()
 draw_button = ttk.Button(shape, text="Draw Shape", command=draw_shape)
 draw_button.pack(pady=10)
 
-#canvas. it's like paper
+#canvas.
 canvas = tk.Canvas(shape, width=300, height=200, background="white")
 canvas.pack()
 

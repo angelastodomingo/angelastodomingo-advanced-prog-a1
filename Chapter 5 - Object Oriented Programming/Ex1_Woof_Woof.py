@@ -5,11 +5,12 @@
 
 import tkinter as tk
 
+#class to define name and age 
 class Dog:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-
+#will display woof output of whatever name the user types in 
     def woof(self):
         return f"{self.name} says Woof!"
 
@@ -23,11 +24,13 @@ def display_dog_info(): #to get dog info
     dog1 = Dog(dog1_name, dog1_age)
     dog2 = Dog(dog2_name, dog2_age)
 
+    #displays dog info inputted by user 
     dog_info_label.config(text=f"{dog1.name} is {dog1.age} years old.\n{dog2.name} is {dog2.age} years old.", bg='#49494a', fg='white')
 
     oldest_dog = max(dog1, dog2, key=lambda dog: dog.age)
     woof_label.config(text=oldest_dog.woof())
 
+#main window 
 dog = tk.Tk()
 dog.title("Woof woof")
 dog.geometry('300x300')
@@ -65,5 +68,5 @@ dog_info_label.pack()
 woof_label = tk.Label(dog, text="",bg='#49494a', fg='white')
 woof_label.pack()
 
-# Start the main loop
+
 dog.mainloop()

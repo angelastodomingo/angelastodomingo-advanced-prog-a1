@@ -37,35 +37,38 @@ circle_frame = ttk.Frame(notebook)
 square_frame = ttk.Frame(notebook)
 rectangle_frame = ttk.Frame(notebook)
 
+#creates tabs for circle, square and rectangle.
 notebook.add(circle_frame, text="Circle") 
 notebook.add(square_frame, text="Square")
 notebook.add(rectangle_frame, text="Rectangle")
 
 notebook.pack(padx=10, pady=10, fill="both", expand=True)
 
-#circle
+#circle tab widgets
 circle_radius_label = ttk.Label(circle_frame, text="Enter the radius:")
 circle_radius_entry = ttk.Entry(circle_frame)
 calculate_circle_button = ttk.Button(circle_frame, text="Calculate", command=calculate_circle_area)
 circle_result_label = ttk.Label(circle_frame, text="")
 
+#circle tab positions
 circle_radius_label.grid(row=0, column=0, padx=10, pady=10)
 circle_radius_entry.grid(row=0, column=1, padx=10, pady=10)
 calculate_circle_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 circle_result_label.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 
-#square
+#square tab widgets
 square_side_label = ttk.Label(square_frame, text="Enter the side length:")
 square_side_entry = ttk.Entry(square_frame)
 calculate_square_button = ttk.Button(square_frame, text="Calculate", command=calculate_square_area)
 square_result_label = ttk.Label(square_frame, text="")
 
+#square tab positions
 square_side_label.grid(row=0, column=0, padx=10, pady=10)
 square_side_entry.grid(row=0, column=1, padx=10, pady=10)
 calculate_square_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 square_result_label.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 
-#rectangle
+#rectangle tab widgets 
 rectangle_length_label = ttk.Label(rectangle_frame, text="Enter the length:")
 rectangle_length_entry = ttk.Entry(rectangle_frame)
 rectangle_width_label = ttk.Label(rectangle_frame, text="Enter the width:")
@@ -73,6 +76,7 @@ rectangle_width_entry = ttk.Entry(rectangle_frame)
 calculate_rectangle_button = ttk.Button(rectangle_frame, text="Calculate", command=calculate_rectangle_area)
 rectangle_result_label = ttk.Label(rectangle_frame, text="")
 
+#rectangle tab positions 
 rectangle_length_label.grid(row=0, column=0, padx=10, pady=10)
 rectangle_length_entry.grid(row=0, column=1, padx=10, pady=10)
 rectangle_width_label.grid(row=1, column=0, padx=10, pady=10)

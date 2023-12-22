@@ -18,17 +18,19 @@ import tkinter as tk
 
 class Employee:
     def __init__(self):
-        self.name = ""
-        self.position = ""
-        self.salary = 0.0
-        self.id = 0
-
+        self.name = "" #employee name 
+        self.position = "" #employee job
+        self.salary = 0.0 #employee salary
+        self.id = 0 #employee id
+        
+    #4 parameters to set variables 
     def setData(self, name, position, salary, emp_id):
         self.name = name
         self.position = position
         self.salary = salary
         self.id = emp_id
-
+        
+    #returns formatted employee data 
     def getData(self):
         return f"{self.name}\t{self.position}\t{self.salary}\t{self.id}"
 

@@ -9,6 +9,7 @@
 
 print("This program will calculate the area of a square, circle or triangle.")
 
+#defines the function to calculate the area of a square.
 def square():
     #I put a try block to prevent the program from crashing in case the user inputs a wrong value
     try:
@@ -19,6 +20,7 @@ def square():
         print("Invalid input. Please enter a valid number.")
         square()
 
+#defines the function to calculate the area of a circle.
 def circle():
     try:
         num1 = int(input("Enter number to calculate the area of circle: "))
@@ -30,7 +32,7 @@ def circle():
         print("Invalid input. Please enter a valid number.")
         circle()
 
-
+#defines the function to calculate the area of a triangle.
 def triangle():
     try:
         num1 = int(input("Enter height to calculate the area of triangle: "))
@@ -42,7 +44,8 @@ def triangle():
     except ValueError:
         print("Invalid input. Please enter a valid number.")
         triangle()
-    
+
+#defines the function for user to select a shape of their choice 
 def menu():
     print('Select a shape:\n1: Square\n2: Circle\n3: Triangle')
     selection = str(input("Press the number for the following to calculate: "))
@@ -54,4 +57,5 @@ def menu():
         triangle()
     else:
         print("Invalid input.")
+#this is put at the end so that this is the first thing the user sees, reads, and be able to make a choice. 
 menu()

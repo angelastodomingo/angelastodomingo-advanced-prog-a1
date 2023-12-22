@@ -11,19 +11,14 @@ import tkinter as tk
 
 class Animal:
     def __init__(self, animal_type, name, color, age, weight, noise):
-        self.Type = animal_type
-        self.Name = name
-        self.Colour = color
-        self.Age = age
-        self.Weight = weight
-        self.Noise = noise
+        self.Type = animal_type #animal species 
+        self.Name = name #animal name 
+        self.Colour = color #animal coat color 
+        self.Age = age #animal age 
+        self.Weight = weight #animal weight 
+        self.Noise = noise #animal sound 
 
-    def sayHello(self):
-        print(f"{self.Name} says hello!")
-
-    def makeNoise(self):
-        print(f"{self.Name} makes a {self.Noise} noise!")
-
+    #details of dog and cow 
     def animalDetails(self):
         details = (
             f"Type: {self.Type}\n"
@@ -40,12 +35,8 @@ dog = Animal("Dog", "Buddy", "Brown", 4, 20, "Bark")
 cow = Animal("Cow", "Daisy", "White", 6, 600, "Moo")
 
 #class functions
-dog.sayHello()
-dog.makeNoise()
 dog.animalDetails()
 print("\n")
-cow.sayHello()
-cow.makeNoise()
 cow.animalDetails()
 
 #gui 
@@ -56,7 +47,7 @@ playwin.geometry('300x300')
 result_text = tk.Text(playwin, height=30, width=40)
 result_text.pack()
 
-result_text.insert("1.0", "Animal 1 Information:\n")
+result_text.insert("1.0", "Animal 1 Information:\n") #inserts animal 1 info. 
 result_text.insert("end", f"Type: {dog.Type}\n")
 result_text.insert("end", f"Name: {dog.Name}\n")
 result_text.insert("end", f"Colour: {dog.Colour}\n")
@@ -64,7 +55,7 @@ result_text.insert("end", f"Age: {dog.Age}\n")
 result_text.insert("end", f"Weight: {dog.Weight}\n")
 result_text.insert("end", f"Noise: {dog.Noise}\n\n")
 
-result_text.insert("end", "Animal 2 Information:\n")
+result_text.insert("end", "Animal 2 Information:\n") #inserts animal 2 info.
 result_text.insert("end", f"Type: {cow.Type}\n")
 result_text.insert("end", f"Name: {cow.Name}\n")
 result_text.insert("end", f"Colour: {cow.Colour}\n")
@@ -72,7 +63,6 @@ result_text.insert("end", f"Age: {cow.Age}\n")
 result_text.insert("end", f"Weight: {cow.Weight}\n")
 result_text.insert("end", f"Noise: {cow.Noise}\n")
 
-result_text.config(state="disabled")
-
+result_text.config(state="disabled") #text will only be read-only 
 
 playwin.mainloop()

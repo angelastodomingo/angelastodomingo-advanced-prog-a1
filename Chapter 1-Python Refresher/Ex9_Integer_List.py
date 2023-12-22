@@ -11,26 +11,26 @@
 
 int_list = [1,2,3,4,5,6,7,8,9,10]
 
-#A for loop
+#using a for loop
 print("Using a for loop")
 for num in int_list:
     print (num)
     
-#Highest and lowest value
+#prints out the highest value and lowest value in the int_list, respectively
 print("Highest value:", max(int_list))
 print("Lowest value:", min(int_list))
 
-#Ascending order
+#prints the int_list in ascending order
 int_list.sort()
 print("Ascending order: ", int_list)
 
-#Descending order 
+#prints the int_list in descending order
 int_list.sort(reverse=True)
 print("Descending order: ", int_list)
 
-#Append two elements 
+#appends 11 and 12 to the list 
 int_list.append(11)
 int_list.append(12)
 
-#Print list after appending
+#prints the updated list after appending
 print(int_list)

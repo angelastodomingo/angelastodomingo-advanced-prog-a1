@@ -14,12 +14,13 @@ def write_to_file(): #to write data to file
     name = name_entry.get()
     age = age_entry.get()
     hometown = hometown_entry.get()
-
+    
+#takes bio.txt file
     with open("bio.txt", "w") as file:
         file.write(f"Name: {name}\n")
         file.write(f"Age: {age}\n")
         file.write(f"Hometown: {hometown}\n")
-
+#will output once user has clicked 'write to file'
     result_label.config(text="Data has been written to bio.txt")
 
 #to read and display info from file
@@ -38,6 +39,7 @@ userwin.title("User Information")
 form_frame = ttk.LabelFrame(userwin, text="Enter User Information")
 form_frame.grid(row=0, column=0, padx=10, pady=10)
 
+#labels and element positions on the window
 name_label = ttk.Label(form_frame, text="Name:")
 name_label.grid(row=0, column=0, padx=10, pady=5)
 name_entry = ttk.Entry(form_frame)

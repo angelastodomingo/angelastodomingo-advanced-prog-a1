@@ -11,6 +11,7 @@
 
 print("This is a calculator. It can add, subtract, multiply, divide and get the remainder.\nTo get started, select an operator: \n")
 
+#defines the function for 'addition' operator to work, when the user selects it. 
 def add():
     #I put a try block to prevent the program from crashing in case the user inputs a wrong value
     try:
@@ -31,6 +32,7 @@ def add():
     else:
         print("Invalid input. Exiting the program.")
         
+#defines the function for 'subtraction' operator to work, when the user selects it.         
 def sub():
     try:
         num1 = int(input("Enter the first number: "))
@@ -49,7 +51,8 @@ def sub():
         exit()
     else:
         print("Invalid input. Exiting the program.")
-
+        
+#defines the function for 'multiplication' operator to work, when the user selects it. 
 def mul():
     try:
         num1 = int(input("Enter the first number: "))
@@ -69,6 +72,7 @@ def mul():
     else:
         print("Invalid input. Exiting the program.")
 
+#defines the function for 'division' operator to work, when the user selects it. 
 def div():
     try:
         num1 = int(input("Enter the first number: "))
@@ -87,7 +91,8 @@ def div():
         exit()
     else:
         print("Invalid input. Exiting the program.")
-    
+
+#defines the function for 'remainder' operator to work, when the user selects it. 
 def rem():
     try:
         num1 = int(input("Enter the first number: "))
@@ -107,7 +112,7 @@ def rem():
     else:
         print("Invalid input. Exiting the program.")
         
-    
+#the menu for the user to select any operator of their choice, and calculate whatever numbers they have.     
 def menu():
     selection = input("Press 1 for addition\nPress 2 for subtraction\nPress 3 for multiplication\nPress 4 for division\nPress 5 to get the remainder\n")
 

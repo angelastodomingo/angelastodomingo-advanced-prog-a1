@@ -11,31 +11,31 @@ class Shape:
         self.sides = []
 
     def inputSides(self):
-        pass 
+        pass #placeholder
 
 class Circle(Shape):
-    def inputSides(self):
+    def inputSides(self): #overrides inputSides to take input for circle 
         radius = float(radius_entry.get())
         self.sides = [radius]
-
+    #calculates the area of the circle 
     def area(self):
         return math.pi * self.sides[0] ** 2
 
 class Rectangle(Shape):
-    def inputSides(self):
+    def inputSides(self): #overrides inputSides to take input for rectangle  
         length = float(length_entry.get())
         width = float(width_entry.get())
         self.sides = [length, width]
-
+    #calculates the area of the rectangle 
     def area(self):
         return self.sides[0] * self.sides[1]
 
 class Triangle(Shape):
-    def inputSides(self):
+    def inputSides(self): #overrides inputSides to take input for triangle 
         base = float(base_entry.get())
         height = float(height_entry.get())
         self.sides = [base, height]
-
+    #calculates the area of the triangle 
     def area(self):
         return 0.5 * self.sides[0] * self.sides[1]
 
@@ -54,7 +54,7 @@ def calculate_area():
         shape.inputSides()
         area_result.config(text=f"Area: {shape.area()}")
     else:
-        area_result.config(text="Invalid shape selected.")
+        area_result.config(text="Invalid shape selected.") #will output if the shape isn't recognized 
 
 shapeareawin = tk.Tk()
 shapeareawin.title("Shapes")
@@ -89,7 +89,7 @@ calculate_button = tk.Button(shapeareawin, text="Calculate Area", command=calcul
 #displays area result
 area_result = tk.Label(shapeareawin, text="Area:", bg='#49494a', fg='white', pady=10)
 
-def update_widgets(*args):
+def update_widgets(*args): #function that takes any number of arguments 
     shape_type = shape_choice.get()
     clear_widgets()
 
@@ -106,12 +106,15 @@ def update_widgets(*args):
         base_entry.pack()
         height_label.pack()
         height_entry.pack()
-
+        
+    #calculate btn 
     calculate_button.pack(pady=10)
     area_result.pack()
-
+    
+#when shape_choice changes, update_widgets will be called 
 shape_choice.trace("w", update_widgets)
 
+#clears input when user selects another shape from the drop down menu 
 def clear_widgets():
     for widget in [
         radius_label, radius_entry, length_label, length_entry,

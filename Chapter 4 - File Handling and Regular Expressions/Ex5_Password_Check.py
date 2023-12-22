@@ -17,7 +17,7 @@ from tkinter import messagebox
 def check_password():
     password = password_entry.get()
 
-    # Define the password criteria
+    #determines the criteria
     criteria = [
         any(c.islower() for c in password),  #at least 1 lowercase letter
         any(c.isdigit() for c in password),  #at least 1 digit
@@ -25,28 +25,29 @@ def check_password():
         any(c in "$#@ " for c in password),   #at least 1 of $, #, or @
         6 <= len(password) <= 12  #minimum and maximum length
     ]
-
+    #will display whether user has typed in the correct password or not 
     if all(criteria):
-        result_label.config(text="Password is valid!", bg='#49494a', fg='white')
+        result_label.config(text="Password is valid!", bg='#49494a', fg='white') #will display if the user has met all the criteria required 
     else:
         if not attempts_remaining[0]:
-            result_label.config(text="The authorities have been alerted!", bg='#49494a', fg='white')
+            result_label.config(text="The authorities have been alerted!", bg='#49494a', fg='white') #will display if user has used all the remaining attempts
         else:
             result_label.config(
                 text=f"Invalid password. {attempts_remaining} attempts remaining.", bg='#49494a', fg='white'
-            )
+            ) #will display if the user has typed in an incorrect password(meaning the criteria has not been all met)
             password_entry.delete(0, "end")
             attempts_remaining[0] -= 1
 
-
+#main window 
 passwordwin = tk.Tk()
 passwordwin.title("Password Check")
 passwordwin.geometry('300x110')
 passwordwin.configure(bg='#49494a')
 
+#counted attempts. 
 attempts_remaining = [5]
 
-#label and entry boxes
+#labels and entry boxes
 password_label = tk.Label(passwordwin, text="Enter a password:",bg='#49494a', fg='white')
 password_label.pack()
 password_entry = tk.Entry(passwordwin, show="*")  # Show * for password input

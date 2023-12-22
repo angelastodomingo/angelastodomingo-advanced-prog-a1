@@ -8,19 +8,19 @@
 
 import tkinter as tk
 
-class StringCounter:
-    def __init__(self, master):
-        self.master = master
-        self.master.title("Count String")
+class StringCounter: #defined class
+    def __init__(self, master): 
+        self.master = master #the parameter of the main window
+        self.master.title("Count String") #sets the title of the main window 
 
         
-        self.strings_to_count = [
+        self.strings_to_count = [ #will be used to count occurences of the 4 sentences
             "Hello my name is Peter Parker",
             "I love Python Programming",
             "Love",
             "Enemy"
         ]
-
+        #stylization 
         self.result_label = tk.Label(master, text="",bg='#49494a', fg='white')
         self.result_label.pack()
 
@@ -37,8 +37,9 @@ class StringCounter:
                 result_text = "\n".join([f"{string}: {count}" for string, count in zip(self.strings_to_count, counts)])
                 self.result_label.config(text=result_text)
         except FileNotFoundError:
-            self.result_label.config(text="File not found.")
-
+            self.result_label.config(text="File not found.") #will display if sentences.txt isn't found in the directory
+            
+#the main window.
 if __name__ == "__main__":
     countstring = tk.Tk()
     root = StringCounter(countstring)

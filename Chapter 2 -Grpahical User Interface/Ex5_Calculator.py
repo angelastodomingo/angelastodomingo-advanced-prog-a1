@@ -4,7 +4,8 @@
 import tkinter as tk
 from tkinter import Label, Entry, Button
 
-def calculate(operator): #to get it working
+def calculate(operator): #defines a function to get the operators to work (addition, subtraction, etc)
+    #added exception handling to deal with 
     try:
         num1 = float(num1entry.get())
         num2 = float(num2entry.get())

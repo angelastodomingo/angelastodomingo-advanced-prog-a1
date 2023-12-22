@@ -19,6 +19,6 @@ for line in lines:
 
         print(f"Skipping non-integer line: {line.strip()}")
 
-
+#prints the contents of numbers.txt
 for num in integer_list:
     print(num)
